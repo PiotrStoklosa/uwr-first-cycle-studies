@@ -9,6 +9,7 @@ states = set()
 nearest_goals_map = []
 
 for line in inputFile:
+
     game.append(line.strip())
     nearest_goals_map.append([-1 for i in range(len(line.strip()))])
 rows = len(game)
@@ -94,9 +95,6 @@ def move_left(starting_positions):
             new_positions.add((pos[0], pos[1] - 1))
     return new_positions
 
-# def print_game(starting_position):
-#     for i in range(len(game)):
-#         for j in range(len())
 
 def play():
     starting_positions = []
@@ -105,27 +103,24 @@ def play():
             if game[i][j] == "S" or game[i][j] == "B":
                 starting_positions.append((i, j))
     q = PriorityQueue()
-    q.put((count_priority(starting_positions), tuple(starting_positions), 0, [starting_positions]))
+    q.put((count_priority(starting_positions), tuple(starting_positions), 0))
     while q:
         current = q.get()
-        if current[0] == 0:
-            return current[2], current[3]
-        if current[1] == {(4, 3), (4, 1), (2, 1), (5, 2)}:
-            print("test") # (3, 2), (5, 2), (5, 3)
-        current[3].append(current[1])
+        if count_priority(current[1]) == 0:
+            return current[2]
         states.add(tuple(current[1]))
         mv_left = move_left(current[1])
         mv_up = move_up(current[1])
         mv_right = move_right(current[1])
         mv_down = move_down(current[1])
         if tuple(mv_left) not in states:
-            q.put((count_priority(mv_left), mv_left, current[2] + 1, current[3]))
+            q.put((count_priority(mv_left) + current[2] + 1, mv_left, current[2] + 1))
         if tuple(mv_up) not in states:
-            q.put((count_priority(mv_up), mv_up, current[2] + 1, current[3]))
+            q.put((count_priority(mv_up) + current[2] + 1, mv_up, current[2] + 1))
         if tuple(mv_right) not in states:
-            q.put((count_priority(mv_right), mv_right, current[2] + 1, current[3]))
+            q.put((count_priority(mv_right) + current[2] + 1, mv_right, current[2] + 1))
         if tuple(mv_down) not in states:
-            q.put((count_priority(mv_down), mv_down, current[2] + 1, current[3]))
+            q.put((count_priority(mv_down) + current[2] + 1, mv_down, current[2] + 1))
 
 
 print(play())
