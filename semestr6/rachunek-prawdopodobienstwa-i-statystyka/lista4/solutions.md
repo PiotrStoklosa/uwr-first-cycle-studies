@@ -1,1 +1,0 @@
-[Solutions](https://hackmd.io/@PiotrStoklosa/r1ZN0iuzc)
