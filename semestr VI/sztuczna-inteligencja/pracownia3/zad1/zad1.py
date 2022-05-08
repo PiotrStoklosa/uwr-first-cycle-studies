@@ -96,10 +96,5 @@ for field in image:
         outputFile.write(str(j))
     outputFile.write('\n')
 
-# for field in image:
-#     for j in field:
-#         outputFile.write(str(j))
-#     outputFile.write('\n')
-
 inputFile.close()
 outputFile.close()
