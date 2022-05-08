@@ -1,1 +1,1 @@
-[Solutions]()
+[Solutions](https://hackmd.io/@PiotrStoklosa/HJCVOUrB9)
