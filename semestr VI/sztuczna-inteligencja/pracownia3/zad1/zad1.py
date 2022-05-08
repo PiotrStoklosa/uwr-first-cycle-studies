@@ -30,11 +30,11 @@ def check_certain(line, line_size):
 for field in inputFile:
     if first_line:
         size = field.split()
-        size_row = int(size[0])
-        size_column = int(size[1])
+        size_column = int(size[0])
+        size_row = int(size[1])
         first_line = False
     else:
-        if row_counter < size_row:
+        if row_counter < size_column:
             rows.append(field.strip())
             row_counter += 1
         else:
@@ -51,11 +51,11 @@ def create_queue(items):
 
 
 queue = create_queue(size_row * size_column)
-image = [["." for i in range(size_column)] for j in range(size_row)]
+image = [["." for i in range(size_row)] for j in range(size_column)]
 
 while queue:
     field = queue.pop(0)
-    row_number = field // size_column
+    row_number = field // size_row
     column_number = field % size_row
     dots = 0
     hashes = 0
@@ -75,8 +75,8 @@ while queue:
     else:
         dots = 0
         hashes = 0
-        for combination in possible_columns[column_number]:
-            if combination[row_number] == "#":
+        for colCombination in possible_columns[column_number]:
+            if colCombination[row_number] == "#":
                 hashes += 1
             else:
                 dots += 1
@@ -95,6 +95,11 @@ for field in image:
     for j in field:
         outputFile.write(str(j))
     outputFile.write('\n')
+
+# for field in image:
+#     for j in field:
+#         outputFile.write(str(j))
+#     outputFile.write('\n')
 
 inputFile.close()
 outputFile.close()
