@@ -1,3 +1,5 @@
+import copy
+
 inputFile = open("zad_input.txt")
 outputFile = open("zad_output.txt", "w")
 
@@ -56,6 +58,8 @@ def short_rows(i, j, val):
             new_possible_rows.append(row)
         else:
             result = True
+    if not new_possible_rows:
+        return "ERROR"
     possible_rows[i] = new_possible_rows
     return result
 
@@ -68,6 +72,8 @@ def short_columns(i, j, val):
             new_possible_columns.append(column)
         else:
             result = True
+    if not new_possible_columns:
+        return "ERROR"
     possible_columns[j] = new_possible_columns
     return result
 
@@ -77,15 +83,23 @@ def check():
     for i in range(size_column):
         for j in range(size_row):
             if image[i][j] != 'X':
-                res = res or short_rows(i, j, image[i][j]) or short_columns(i, j, image[i][j])
+                res1 = short_rows(i, j, image[i][j])
+                if res1 == "ERROR":
+                    return "ERROR"
+                res2 = short_columns(i, j, image[i][j])
+                if res2 == "ERROR":
+                    return "ERROR"
+                res = res or res1 or res2
     return res
 
 
 def test_equivalence():
     res = False
+    final = True
     for i in range(size_column):
         for j in range(size_row):
             if image[i][j] == 'X':
+                final = False
                 hashes = 0
                 dots = 0
                 for row in possible_rows[i]:
@@ -113,18 +127,41 @@ def test_equivalence():
                             image[i][j] = '#'
                         else:
                             image[i][j] = '.'
+    if final:
+        return "SOLVED"
     return res
 
 
 def resolve():
+    global possible_rows
+    global possible_columns
+    global image
     inference = True
     while inference:
         inference = check()
-        inference = inference or test_equivalence()
-    for x in image:
-        for j in x:
-            print(j, end='')
-        print()
+        if inference == "ERROR":
+            return
+        test_result = test_equivalence()
+        if test_result == "SOLVED":
+            for x in image:
+                for j in x:
+                    outputFile.write(str(j))
+                outputFile.write('\n')
+            exit(0)
+        inference = inference or test_result
+    tmp_possible_rows = copy.deepcopy(possible_rows)
+    tmp_possible_columns = copy.deepcopy(possible_columns)
+    tmp_image = copy.deepcopy(image)
+    for i in range(size_column):
+        for j in range(size_row):
+            if image[i][j] == 'X':
+                image[i][j] = '#'
+                resolve()
+                possible_rows = tmp_possible_rows
+                possible_columns = tmp_possible_columns
+                image = tmp_image
+                image[i][j] = '.'
+                resolve()
 
 
 resolve()
