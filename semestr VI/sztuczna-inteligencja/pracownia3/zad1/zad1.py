@@ -128,3 +128,6 @@ def resolve():
 
 
 resolve()
+
+inputFile.close()
+outputFile.close()
