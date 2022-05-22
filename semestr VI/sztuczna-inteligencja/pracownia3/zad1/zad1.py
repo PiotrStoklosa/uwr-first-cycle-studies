@@ -121,10 +121,10 @@ def resolve():
     while inference:
         inference = check()
         inference = inference or test_equivalence()
-    for x in image:
-        for j in x:
-            print(j, end='')
-        print()
+    for row in image:
+        for row_field in row:
+            outputFile.write(str(row_field))
+        outputFile.write('\n')
 
 
 resolve()

@@ -143,9 +143,9 @@ def resolve():
             return
         test_result = test_equivalence()
         if test_result == "SOLVED":
-            for x in image:
-                for j in x:
-                    outputFile.write(str(j))
+            for row in image:
+                for row_field in row:
+                    outputFile.write(str(row_field))
                 outputFile.write('\n')
             exit(0)
         inference = inference or test_result
