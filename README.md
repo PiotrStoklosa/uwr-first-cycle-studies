@@ -96,7 +96,7 @@
     * Wykład: Zdzisław Płoski
     * Ćwiczenia + pracownia: Zdzisław Płoski
 
-## [Semestr VI 2021/22]((https://github.com/PiotrStoklosa/University/tree/main/semestr%20VI))
+## [Semestr VI 2021/22](https://github.com/PiotrStoklosa/University/tree/main/semestr%20VI)
 
 * Innovative Projects by Nokia
     * Pracownia: pracownicy firmy Nokia
