@@ -114,3 +114,8 @@
     * Ćwiczenia: Witold Karczewski
 
 ## Semestr VII 2022/23
+
+* Introduction to cloud computing
+   * Pracownia: Piotr Wieczorek
+* Proseminarium: Bezpieczeństwo i ochrona informacji
+   * Seminarium: Leszek Grocholski
