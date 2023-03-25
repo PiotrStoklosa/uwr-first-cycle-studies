@@ -4,11 +4,11 @@
     * Wykład: Witold Charatonik
     * Repetytorium: Jerzy Marcinkowski
     * Ćwiczenia: Różni prowadzący
-* Analiza matematyczna:
+* Analiza matematyczna
     * Wykład: Maciej Paluszyński
     * Repetytorium: Yuriy Kryakin
     * Ćwiczenia: Yuriy Kryakin
-* Wstęp do informatyki:
+* Wstęp do informatyki
     * Wykład: Tomasz Jurdziński
     * Ćwiczenia: Paweł Garncarek
 * Podstawowy warsztat informatyka:
@@ -20,11 +20,11 @@
 
 ## Semestr II 2019/20
 
-* Algebra:
+* Algebra
     * Wykład: Artur Jeż
     * Repetytorium:  Emanuel Kieroński
     * Ćwiczenia: Jakub Kowalski
-* Metody programowania:
+* Metody programowania
     * Wykład: Filip Sieczkowski, Maciej Piróg, Marek Materzok
     * Repetytorium: Piotr Polesiuk
     * Ćwiczenia + pracownia: Witold Charatonik
@@ -34,48 +34,48 @@
 * Kurs języka C++
     * Wykład: Paweł Rzechonek
     * Pracownia: Marek Piotrów
-* Programowanie Obiektowe:
+* Programowanie Obiektowe
     * Wykład: Marcin Młotkowski
     * Ćwiczenia + pracownia: Robert Kraus
 * O ekonomii i gospodarce inaczej (w)
     * Wykład: Witold Kwaśnicki
 
-## Semestr III 2020/21
+## [Semestr III 2020/21](https://github.com/PiotrStoklosa/University/tree/main/semestr%20III)
 
 * Analiza numeryczna (L)
     * Wykład: Paweł Woźny
     * Repetytorium: Witold Karczewski
     * Ćwiczenia: Paweł Woźny
-* Matematyka dyskretna (M)
+* [Matematyka dyskretna (M)](https://github.com/PiotrStoklosa/University/tree/main/semestr%20III/matematyka-dyskretna-m)
     * Wykład: Grzegorz Stachowiak
     * Repetytorium: Łukasz Jeż
     * Ćwiczenia: Grzegorz Stachowiak
-* Kurs języka Java:
+* Kurs języka Java
     * Wykład: Paweł Rzechonek
     * Pracownia: Piotr Witkowski
-* Kurs WWW:
+* Kurs WWW
     * Wykład: Paweł Rajba
     * Pracownia: Paweł Rajba
-* Systemy operacyjne:
+* Systemy operacyjne
     * Wykład: Krystian Bacławski
     * Ćwiczenia + pracownia: Piotr Witkowski
 
 ## Semestr IV 2020/21
 
-* Algorytmy i struktury danych (L):
+* Algorytmy i struktury danych (L)
     * Wykład: Krzysztof Loryś
     * Ćwiczenia: Łukasz Jeż
     * Pracownia: Marcin Bieńkowski
     * Repetyrorium: Łukasz Jeż
-* Bazy danych:
+* Bazy danych
     * Wykład: Piotr Wieczorek
     * Ćwiczenia: Piotr Wieczorek
 * Kurs: Praktyczne aspekty rozwoju oprogramowania
     * Wykład: pracownicy firmy Nokia
     * Pracownia: pracownicy firmy Nokia
-* Ochrona własności intelektualnej:
+* Ochrona własności intelektualnej
     * Ćwiczenia: Adam Morawiec, Paweł Laskoś-Grabowski, Jakub Michaliszyn
-* Projektowanie obiektowe oprogramowania:
+* Projektowanie obiektowe oprogramowania
     * Wykład: Wiktor Zychla
     * Pracownia: Marcin Młotkowski
 * O ekonomii i gospodarce inaczej (w)
@@ -92,24 +92,24 @@
 * Wybrane elementy praktyki projektowania oprogramowania:
     * Wykład: Wiktor Zychla
     * Pracownia: Wiktor Zychla
-* Komunikacja człowiek-komputer:
+* Komunikacja człowiek-komputer
     * Wykład: Zdzisław Płoski
     * Ćwiczenia + pracownia: Zdzisław Płoski
 
-## Semestr VI 2021/22
+## [Semestr VI 2021/22]((https://github.com/PiotrStoklosa/University/tree/main/semestr%20VI))
 
 * Innovative Projects by Nokia
     * Pracownia: pracownicy firmy Nokia
-* Współczesne narzędzia do tworzenia aplikacji webowych:
+* Współczesne narzędzia do tworzenia aplikacji webowych
     * Wykład: pracownicy firmy FINGO
     * Pracownia: pracownicy firmy FINGO
-* Sieci komputerowe
+* [Sieci komputerowe](https://github.com/PiotrStoklosa/University/tree/main/semestr%20VI/sieci-komputerowe)
     * Wykład: Marcin Bieńkowski
     * Ćwiczenia + pracownia: Tomasz Wierzbicki
-* Sztuczna inteligencja:
+* [Sztuczna inteligencja](https://github.com/PiotrStoklosa/University/tree/main/semestr%20VI/sztuczna-inteligencja)
     * Wykład: Paweł Rychlikowski
     * Ćwiczenia + pracownia: Jakub Kowalski
-* Rachunek prawdopodobieństwa i statystyka:
+* [Rachunek prawdopodobieństwa i statystyka](https://github.com/PiotrStoklosa/University/tree/main/semestr%20VI/rachunek-prawdopodobienstwa-i-statystyka)
     * Wykład: Witold Karczewski
     * Ćwiczenia: Witold Karczewski
 
