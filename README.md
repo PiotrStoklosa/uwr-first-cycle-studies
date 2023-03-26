@@ -1,3 +1,5 @@
+# University of Wroclaw - Computer Science, First-cycle studies (engineer's degree)
+
 ## Semestr I 2019/20
 
 * Logika dla informatyków
