@@ -98,9 +98,9 @@
 
 ## [Semestr VI 2021/22](https://github.com/PiotrStoklosa/University/tree/main/semestr%20VI)
 
-* Innovative Projects by Nokia
+* [Innovative Projects by Nokia](https://github.com/PiotrStoklosa/University/tree/main/semestr%20VI/innovative-projects-by-Nokia)
     * Pracownia: pracownicy firmy Nokia
-* Współczesne narzędzia do tworzenia aplikacji webowych
+* [Współczesne narzędzia do tworzenia aplikacji webowych](https://github.com/PiotrStoklosa/University/tree/main/semestr%20VI/wspolczesne-narzedzia-do-tworzenia-aplikacji-webowych)
     * Wykład: pracownicy firmy FINGO
     * Pracownia: pracownicy firmy FINGO
 * [Sieci komputerowe](https://github.com/PiotrStoklosa/University/tree/main/semestr%20VI/sieci-komputerowe)
