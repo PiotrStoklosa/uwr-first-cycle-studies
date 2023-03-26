@@ -113,9 +113,9 @@
     * Wykład: Witold Karczewski
     * Ćwiczenia: Witold Karczewski
 
-## Semestr VII 2022/23
+## [Semestr VII 2022/23](https://github.com/PiotrStoklosa/University/tree/main/semestr%20VII)
 
-* Introduction to cloud computing
+* [Introduction to cloud computing](https://github.com/PiotrStoklosa/University/tree/main/semestr%20VII/introduction-to-cloud-computing)
    * Pracownia: Piotr Wieczorek
-* Proseminarium: Bezpieczeństwo i ochrona informacji
+* [Proseminarium: Bezpieczeństwo i ochrona informacji](https://github.com/PiotrStoklosa/University/tree/main/semestr%20VII/proseminarium-bezpieczenstwo-i-ochrona-informacji)
    * Seminarium: Leszek Grocholski
