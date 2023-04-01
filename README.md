@@ -83,12 +83,12 @@
 * O ekonomii i gospodarce inaczej (w)
     * Wykład: Witold Kwaśnicki
 
-## Semestr V 2021/22
+## [Semestr V 2021/22](https://github.com/PiotrStoklosa/University/tree/main/semestr%20V)
 
 * Programowanie współbieżne
     * Wykład: Piotr Witkowski
     * Pracownia: Piotr Witkowski
-* Scala in Practice
+* [Scala in Practice](https://github.com/PiotrStoklosa/University/tree/main/semestr%20V/scala-in-practise)
     * Wykład: Michał Kowalczykiewicz
     * Pracownia: Michał Kowalczykiewicz
 * Wybrane elementy praktyki projektowania oprogramowania:
