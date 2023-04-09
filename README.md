@@ -44,7 +44,7 @@
 
 ## [Semestr III 2020/21](https://github.com/PiotrStoklosa/University/tree/main/semestr%20III)
 
-* Analiza numeryczna (L)
+* [Analiza numeryczna (L)](https://github.com/PiotrStoklosa/University/tree/main/semestr%20III/analiza-numeryczna-l)
     * Wykład: Paweł Woźny
     * Repetytorium: Witold Karczewski
     * Ćwiczenia: Paweł Woźny
