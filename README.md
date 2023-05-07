@@ -1,6 +1,6 @@
 # University of Wroclaw - Computer Science, First-cycle studies (engineer's degree)
 
-## Semestr I 2019/20
+## [Semestr I 2019/20](https://github.com/PiotrStoklosa/University/tree/main/semestr%20I)
 
 * Logika dla informatyków
     * Wykład: Witold Charatonik
