@@ -6,7 +6,7 @@
     * Wykład: Witold Charatonik
     * Repetytorium: Jerzy Marcinkowski
     * Ćwiczenia: Różni prowadzący
-* Analiza matematyczna
+* [Analiza matematyczna](https://github.com/PiotrStoklosa/University/tree/main/semestr%20I/analiza-matematyczna)
     * Wykład: Maciej Paluszyński
     * Repetytorium: Yuriy Kryakin
     * Ćwiczenia: Yuriy Kryakin
