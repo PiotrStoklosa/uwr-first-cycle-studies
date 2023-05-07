@@ -16,7 +16,7 @@
 * Podstawowy warsztat informatyka:
     * Wykład: Piotr Wieczorek
     * Pracownia: Mateusz Lewandowski
-* Wstęp do programowania w języku C
+* [Wstęp do programowania w języku C](https://github.com/PiotrStoklosa/University/tree/main/semestr%20I/wstep-do-programowania-w-j%C4%99zyku-C)
     * Wykład: Marek Piotrów
     * Pracownia: Marek Piotrów
 
