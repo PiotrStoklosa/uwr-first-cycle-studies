@@ -30,7 +30,7 @@
     * Wykład: Filip Sieczkowski, Maciej Piróg, Marek Materzok
     * Repetytorium: Piotr Polesiuk
     * Ćwiczenia + pracownia: Witold Charatonik
-* Architektury systemów komputerowych
+* [Architektury systemów komputerowych](https://github.com/PiotrStoklosa/University/tree/main/semestr%20II/architektury-systemow-komputerowych)
     * Wykład: Krystian Bacławski
     * Ćwiczenia + pracownia: Artur Kraska
 * Kurs języka C++
