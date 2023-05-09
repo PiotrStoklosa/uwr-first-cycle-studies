@@ -13,7 +13,7 @@
 * [Wstęp do informatyki](https://github.com/PiotrStoklosa/University/tree/main/semestr%20I/wstep-do-informatyki)
     * Wykład: Tomasz Jurdziński
     * Ćwiczenia: Paweł Garncarek
-* Podstawowy warsztat informatyka:
+* [Podstawowy warsztat informatyka](https://github.com/PiotrStoklosa/University/tree/main/semestr%20I/podstawowy-warsztat-informatyka)
     * Wykład: Piotr Wieczorek
     * Pracownia: Mateusz Lewandowski
 * [Wstęp do programowania w języku C](https://github.com/PiotrStoklosa/University/tree/main/semestr%20I/wstep-do-programowania-w-j%C4%99zyku-C)
