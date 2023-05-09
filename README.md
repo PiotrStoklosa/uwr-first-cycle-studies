@@ -20,7 +20,7 @@
     * Wykład: Marek Piotrów
     * Pracownia: Marek Piotrów
 
-## Semestr II 2019/20
+## [Semestr II 2019/20](https://github.com/PiotrStoklosa/University/tree/main/semestr%20II)
 
 * Algebra
     * Wykład: Artur Jeż
