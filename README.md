@@ -36,7 +36,7 @@
 * Kurs języka C++
     * Wykład: Paweł Rzechonek
     * Pracownia: Marek Piotrów
-* Programowanie Obiektowe
+* [Programowanie Obiektowe](https://github.com/PiotrStoklosa/University/tree/main/semestr%20II/programowanie-obiektowe)
     * Wykład: Marcin Młotkowski
     * Ćwiczenia + pracownia: Robert Kraus
 * O ekonomii i gospodarce inaczej (w)
