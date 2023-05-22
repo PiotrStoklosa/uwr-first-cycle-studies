@@ -1,0 +1,4 @@
+00 00 00 00 00 00 00 00 /* Wypełnianie bufora znakami */
+00 00 00 00 00 00 00 00 /* Wypełnianie bufora znakami */
+00 00 00 00 00 00 00 00 /* Wypełnianie bufora znakami */
+69 1c 40 00 00 00 00 00 /* Adres funkcji touch1 */
