@@ -33,7 +33,7 @@
 * [Architektury systemów komputerowych](https://github.com/PiotrStoklosa/University/tree/main/semestr%20II/architektury-systemow-komputerowych)
     * Wykład: Krystian Bacławski
     * Ćwiczenia + pracownia: Artur Kraska
-* Kurs języka C++
+* [Kurs języka C++](https://github.com/PiotrStoklosa/University/tree/main/semestr%20II/kurs-jezyka-c%2B%2B)
     * Wykład: Paweł Rzechonek
     * Pracownia: Marek Piotrów
 * [Programowanie Obiektowe](https://github.com/PiotrStoklosa/University/tree/main/semestr%20II/programowanie-obiektowe)
