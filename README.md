@@ -58,7 +58,7 @@
 * Kurs WWW
     * Wykład: Paweł Rajba
     * Pracownia: Paweł Rajba
-* Systemy operacyjne
+* [Systemy operacyjne](https://github.com/PiotrStoklosa/University/tree/main/semestr%20III/systemy-operacyjne)
     * Wykład: Krystian Bacławski
     * Ćwiczenia + pracownia: Piotr Witkowski
 
