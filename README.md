@@ -26,7 +26,7 @@
     * Wykład: Artur Jeż
     * Repetytorium:  Emanuel Kieroński
     * Ćwiczenia: Jakub Kowalski
-* Metody programowania
+* [Metody programowania](https://github.com/PiotrStoklosa/University/tree/main/semestr%20II/metody-programowania)
     * Wykład: Filip Sieczkowski, Maciej Piróg, Marek Materzok
     * Repetytorium: Piotr Polesiuk
     * Ćwiczenia + pracownia: Witold Charatonik
