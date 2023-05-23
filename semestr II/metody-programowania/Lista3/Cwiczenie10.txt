@@ -1,0 +1,124 @@
+Zadanie 10 Lista 3
+
+Dowód 1
+
+Teza:
+
+(map f (append xs ys)) = (append (map f xs) (map f ys))
+
+
+Dowód przedstawię przez indukcję.
+
+1. Podstawa indukcji
+
+	Dla xs = null:
+
+
+L = (map f (append xs ys)) = (map f (append null ys)) = (map f (if (null? null) ys ...)) = (map f ys)
+P = (append (map f xs) (map f ys)) = (append (map f null) (map f ys)) = (append (if (null? null) null ...) (map f ys)) = (append null (map f ys)) = (map f (if (null? null) ys ...)) = (map f ys) = L
+
+2. Krok indukcyjny
+
+	Weźmy dowolne x oraz xs i załóżmy, że (map f (append xs ys)) = (append (map f xs) (map f ys))) i (cons x xs) != null. 
+	Pokażę, że (map f (append (cons x xs) ys)) = (append (map f (cons x xs)) (map f ys)). Wtedy:
+
+
+L = (map f (append (cons x xs) ys) =
+
+(map f (cons (car (cons x xs)) (append (cdr (cons x xs)) ys))) = (z definicji car oraz cdr)
+
+(map f (cons x (append xs ys))) = (z definicji map i if)
+
+(cons (f (car (cons x (append xs ys)))) (map f (cdr (cons x (append xs ys))))) = (z definicji car i cdr)
+
+(cons (f x) (map f (append xs ys)))
+
+
+P = (append (map f (cons x xs)) (map f ys)) = (z definicji map oraz z tego, że (cons x xs) != null)
+
+(append (cons (f (car (cons x xs))) (map f (cdr (cons x xs)))) (map f ys)) =
+
+(append (cons (f x) (map f xs)) (map f ys)) = (z definicji append) 
+
+(cons (car (cons (f x) (map f xs))) (append (cdr (cons (f x) (map f xs))) (map f ys))) = 
+
+(cons (f x) (append (map f xs) (map f ys))) = (z zał indukcyjnego)
+
+(cons (f x) (map f (append xs ys)) = L
+
+
+L = P , czyli z zasady indukcji teza jest prawdziwa.
+
+
+Dowód 2
+
+Teza:
+
+(filter p? (append xs ys)) = (append (filter p? xs) (filter p? ys))
+
+
+Dowód przedstawię przez indukcję.
+
+1. Podstawa indukcji
+	
+	Dla xs = null:
+
+
+L = (filter p? (append xs ys)) = (filter p? (append null ys)) = (filter p? yes)
+P = (append (filter p? xs) (filter p? ys)) = (append (filter p? null) (filter p? ys)) = (append null (filter p? ys)) = (filter p? yes) = L
+
+2. Krok indukcyjny
+
+	Weźmy dowolne x oraz xs i załóżmy, że (filter p? (append xs ys)) = (append (filter p? xs) (filter p? ys)) i (cons x xs) != null. 
+	Pokażę, że (filter p? (append (cons x xs) ys)) = (append (filter p? (cons x xs)) (filter p? ys)). Wtedy:
+
+
+L = (filter p? (append (cons x xs) ys)) = (z def append i z tego, że (cons x xs) != null)
+
+(filter p? (cons (car (cons x xs)) (append (cdr (cons x xs)) ys))) = 
+
+(filter p? (cons x (append xs ys)))
+
+Mamy 2 przypadki:
+
+
+1. (p? x) = #t
+
+
+L = (filter p? (cons x (append xs ys))) = (z tego, że (p? x) = #t oraz z definicji filter)
+
+(cons x (filter p? (append xs ys)))
+
+
+P = (append (filter p? (cons x xs)) (filter p? ys)) = (z tego, że (p? x) = #t oraz z definicji filter)
+
+(append (cons (car (cons x xs)) (filter p? (cdr (cons x xs)))) (filter p? ys)) =
+
+(append (cons x (filter p? xs)) (filter p? ys)) = (z def append)
+
+(cons (car (cons x (filter p? xs))) (append (cdr (cons x (filter p? xs))) (filter p? ys))) =
+
+(cons x (append (filter p? xs) (filter p? ys))) = (z zał indukcyjnego)
+
+(cons x (filter p? (append xs ys))) = L
+
+
+2. (p? x) = #f
+
+
+L = (filter p? (cons x (append xs ys))) = (z tego, że (p? x) = #f oraz z definicji filter)
+
+(filter p? (cdr (cons x (append xs ys)))) =
+
+(filter p? (append xs ys))
+
+P = (append (filter p? (cons x xs)) (filter p? ys)) = (z tego, że (p? x) = #f oraz z definicji filter)
+
+(append (filter p? (cdr (cons x xs))) (filter p? ys)) =
+
+(append (filter p? xs) (filter p? ys)) = (z zał indukcyjnego)
+
+(filter p? (append xs ys)) = L
+
+
+W obu przypadkach L = P , czyli z zasady indukcji teza jest prawdziwa.
