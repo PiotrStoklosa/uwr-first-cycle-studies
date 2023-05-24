@@ -1,0 +1,61 @@
+Indexy GIST sprawdzą się dobrze, jeżeli wynik zapytania nie będzie zwracał dużej ilości rekordów. Operator &> jest operatorem binarnym, który można zastosować na typie danych circle, box, polygon. Zwraca wartość logiczną 't' wtedy i tylko wtedy, gdy pierwszy obiekt nie rozciąga się na lewo od drugiego. Przykładowo dla zapytania box '(3,3),(0,0)' &> box '(2,2),(0,0)' dostaniemy 't'.
+
+Stworzenie tabeli:
+
+CREATE TABLE circles(id SERIAL PRIMARY KEY, c circle);
+
+insert into circles(c)
+select circle(point(n*random(),n*random()), random())
+from generate_series(1,1000000) AS n;
+
+
+Stworzenie indeksu:
+
+CREATE INDEX ON circles USING GIST (c circle_ops);
+
+Zapytanie:
+
+EXPLAIN ANALYZE SELECT c FROM circles WHERE c &> circle '(980000,0),0.1';
+
+Z indeksem:
+
+Bitmap Heap Scan on circles  (cost=4423.28..13026.28 rows=100000 width=24) (actual time=0.751..0.996 rows=215 loops=1)
+   Recheck Cond: (c &> '<(980000,0),0.1>'::circle)
+   Heap Blocks: exact=102
+   ->  Bitmap Index Scan on circles_c_idx  (cost=0.00..4398.28 rows=100000 width=0) (actual time=0.722..0.722 rows=215 loops=1)
+         Index Cond: (c &> '<(980000,0),0.1>'::circle)
+ Planning Time: 0.247 ms
+ Execution Time: 1.043 ms
+
+
+Bez indeksu:
+
+ Seq Scan on circles  (cost=0.00..19853.00 rows=100000 width=24) (actual time=115.289..118.084 rows=215 loops=1)
+   Filter: (c &> '<(980000,0),0.1>'::circle)
+   Rows Removed by Filter: 999785
+ Planning Time: 0.192 ms
+ Execution Time: 118.130 ms
+
+
+Zapytanie:
+
+EXPLAIN ANALYZE SELECT c FROM circles WHERE c &> circle '(989876,989876),0.0002';
+
+Z indeksem:
+
+ Bitmap Heap Scan on circles  (cost=4427.28..13030.28 rows=100000 width=24) (actual time=0.657..0.755 rows=57 loops=1)
+   Recheck Cond: (c &> '<(989876,989876),0.0002>'::circle)
+   Heap Blocks: exact=36
+   ->  Bitmap Index Scan on circles_c_idx  (cost=0.00..4402.28 rows=100000 width=0) (actual time=0.632..0.632 rows=57 loops=1)
+         Index Cond: (c &> '<(989876,989876),0.0002>'::circle)
+ Planning Time: 0.257 ms
+ Execution Time: 0.806 ms
+
+Bez indeksu:
+
+ Seq Scan on circles  (cost=0.00..19853.00 rows=100000 width=24) (actual time=92.651..93.395 rows=57 loops=1)
+   Filter: (c &> '<(989876,989876),0.0002>'::circle)
+   Rows Removed by Filter: 999943
+ Planning Time: 0.038 ms
+ Execution Time: 93.417 ms
+
