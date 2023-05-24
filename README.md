@@ -69,7 +69,7 @@
     * Ćwiczenia: Łukasz Jeż
     * Pracownia: Marcin Bieńkowski
     * Repetyrorium: Łukasz Jeż
-* Bazy danych
+* [Bazy danych](https://github.com/PiotrStoklosa/University/tree/main/semestr%20IV/bazy-danych)
     * Wykład: Piotr Wieczorek
     * Ćwiczenia: Piotr Wieczorek
 * Kurs: Praktyczne aspekty rozwoju oprogramowania
