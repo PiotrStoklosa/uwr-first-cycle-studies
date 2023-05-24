@@ -62,7 +62,7 @@
     * Wykład: Krystian Bacławski
     * Ćwiczenia + pracownia: Piotr Witkowski
 
-## Semestr IV 2020/21
+## [Semestr IV 2020/21](https://github.com/PiotrStoklosa/University/tree/main/semestr%20IV)
 
 * Algorytmy i struktury danych (L)
     * Wykład: Krzysztof Loryś
