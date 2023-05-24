@@ -22,7 +22,7 @@
 
 ## [Semestr II 2019/20](https://github.com/PiotrStoklosa/University/tree/main/semestr%20II)
 
-* Algebra
+* [Algebra](https://github.com/PiotrStoklosa/University/tree/main/semestr%20II/algebra)
     * Wykład: Artur Jeż
     * Repetytorium:  Emanuel Kieroński
     * Ćwiczenia: Jakub Kowalski
