@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <title>Zad3</title>
+    <meta charset="UTF-8">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js "></script>
+    <script src="jquery-3.1.1.js" type="text/javascript"></script>
+
+    <script>
+        function loadData() {
+          $.getJSON("rss.json", function( data ){
+
+            data.rss.channel.item = data.rss.channel.item.slice(0,5);
+            var TEMPLATE = $('#template').html();
+            $('#data').html(Mustache.render(TEMPLATE, data));
+
+          });
+      }
+    </script>
+  </head>
+
+  <body onload="loadData()">
+
+    <ul id="data"></ul>
+    
+    <script id="template">
+
+      {{#rss}}
+        {{#channel}}
+        {{#item}}
+            <li>{{title}}<br><br>
+            <a href={{link}}> {{link}} </a> <br><br>
+            {{#description}}
+              {{{__cdata}}}<br><br></li>
+            {{/description}}
+          {{/item}}
+        {{/channel}}
+      {{/rss}}
+
+    </script>
+  </body>
+</html>

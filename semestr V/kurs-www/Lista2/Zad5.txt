@@ -1,0 +1,1 @@
+Można utworzyć kontenery w których znajduje się zarówno zdjęcia produktów jak i opis. W każdym takim kontenerze można wykorzystać pozycjonowanie absolutne (w stosunku do początku takiego kontenera)

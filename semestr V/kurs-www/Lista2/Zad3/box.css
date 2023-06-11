@@ -1,0 +1,33 @@
+.boxModel
+{
+width: 200px;
+height: 200px;
+background: yellow;
+color: black;
+padding: 20px;
+border: 10px solid green;
+box-sizing: border-box;
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+}
+.CenterInline
+{
+  background-color: black;
+  display: inline;
+}
+.CenterBlock
+{
+  background-color: black;
+color: white;
+  width: 100px;
+  height: 100px;
+margin-left: auto;
+margin-right: auto;
+  display: block;
+}
+.Center
+{
+color: white;
+text-align: center;
+}

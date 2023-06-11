@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+		<title>Tytuł</title>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="jquery-3.1.1.js"></script>
+    </head>
+    <body>
+
+       <ul id = "items">
+
+<li>Jakis losowy tekst</li>
+<li>Jakis inny losowy tekst</li>
+<li>Jeszcze inny losowy tekst</li>
+
+</ul>
+<input id = "searchphrase">
+
+
+</input>
+
+        <script type="text/javascript">
+		
+	
+			$(document).ready(function() {
+
+				const input1 = document.getElementById("searchphrase");
+
+				function replaceText() {
+
+					text = input1.value;
+					$("li").css("background","white");
+
+					console.log(text);
+
+					if (input1.value.length >= 3){
+						$("li").css("background","lightgrey");
+						$( "li:contains("+ text +")" ).css("background","yellow");
+					}
+				}
+
+				$('#searchphrase').keyup(function(e){
+
+					setTimeout(() => {  replaceText() }, 1);
+				});
+			});
+			
+        </script>
+    </body>
+</html>

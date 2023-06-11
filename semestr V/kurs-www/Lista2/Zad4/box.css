@@ -1,0 +1,28 @@
+.boxModel
+{
+width: 200px;
+height: 200px;
+background: yellow;
+color: black;
+padding: 20px;
+border: 10px solid green;
+}
+
+.relativeDiv
+{
+width: 500px;
+height: 500px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.staticDiv
+{
+position: fixed; left: 300px; top: 300px;
+width: 200px;
+height: 200px;
+background: yellow;
+color: black;
+padding: 20px;
+border: 10px solid green;
+}

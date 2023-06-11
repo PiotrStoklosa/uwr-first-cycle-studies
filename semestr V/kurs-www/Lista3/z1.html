@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+<title>title</title>
+<meta charset="UTF-8">
+
+</head>
+
+<body>
+
+
+<form onsubmit="return wyslanie()"><table>
+
+
+<tr><td>nr konta:</td><td><input required type="text" name="txtLogin" pattern="[0-9]{26}" size="30"  /></td></tr>
+
+<tr><td>pesel:</td><td><input type="text" name ="pesel" pattern="[0-9]{11}" size="30" required /></td></tr>
+
+<tr><td>data urodzenia:</td><td><input type="date" name="urodziny" required /></tr></td>
+
+<tr><td>e-mail:</td><td><input type="email" name="email" required /></tr></td>
+
+<tr><td ><input type="submit" value="Wyślij" /></td></tr>
+
+
+</table></form>
+<script language="javascript" type="text/javascript">
+function wyslanie()
+{
+	
+	alert("Wysłano!");	
+	
+	
+	return false;
+}</script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <title>Tytuł</title>
+        <meta charset="UTF-8">
+        <script type="text/javascript" src="jquery-3.1.1.js"></script>
+        <style>
+            table, th, td {
+                 border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <button style="width: 100px; height: 40px;" onclick="generate()">Generuj</button>
+            <label id = "generate">
+        </div>
+        
+        <table id="table" cellpadding="0" cellspacing="1" width="100%">
+        </table>
+        <script type="text/javascript">
+
+
+            var podmiot = ["Uczen", "Student", "Brat"];
+            var orzeczenie = ["ukradl", "znalazl", "zrzucil"];
+            var dopelnienie = ["gre", "komputer", "szklanke"];
+
+
+            function generate(){
+                var LosowyPodmiot = podmiot[Math.floor(Math.random() * podmiot.length)];
+                var LosoweOrzeczenie = orzeczenie[Math.floor(Math.random() * orzeczenie.length)];
+                var LosoweDopelnienie = dopelnienie[Math.floor(Math.random() * dopelnienie.length)];
+                document.getElementById('generate').innerHTML = LosowyPodmiot + " " + LosoweOrzeczenie + " " + LosoweDopelnienie;
+            }
+            $(function() {
+                for (let i = 0; i < 3; i++)
+                    $('#table').append("<tr><td>" + podmiot[i] + "</td><td>" + orzeczenie[i] + "</td><td>" + dopelnienie[i] + "</td></tr>");
+            });
+        </script>
+    </body>
+</html>

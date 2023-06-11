@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+<title>title</title>
+<meta charset="UTF-8">
+
+<style>
+.animate {
+    height: 70px;
+    width: 70px;
+    background: linear-gradient(red, blue);
+    position: absolute;    
+}
+</style>
+
+</head>
+
+<body> 
+<div>
+	<div style="margin-left: 600px; margin-top: 200px" class = "animate" id = "1"></div>
+	<div style="margin-left: 680px; margin-top: 200px" class = "animate" id = "2"></div>
+	<div style="margin-left: 760px; margin-top: 200px" class = "animate" id = "3"></div>
+</div>
+
+
+<script language="javascript" type="text/javascript">
+
+function Move(anim, x) 
+{
+	function run() 
+	{
+		
+        if (position  == 0) 
+		{
+            sign *= -1;
+			position ++;
+        } 
+		if (position == 100)
+		{
+			sign *= -1;
+			position --;
+		}
+		
+		position += sign;
+		element.style.top = position + 'px';
+		
+    }
+	
+    var element = document.getElementById(anim);
+    var position = 1;
+    var sign = 1;
+    var id = setInterval(run, x);
+	
+}
+
+setTimeout(() => {  Move("1", 5) }, 200);
+setTimeout(() => {  Move("2", 5) }, 400);
+setTimeout(() => {  Move("3", 5) }, 600);
+
+</script>
+
+</body>
+</html>

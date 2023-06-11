@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<title>Tytuł</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="float.css">
+<style>
+input{
+width:150px;height:20px;background-color:#fff; color:#000; border: 3px dashed #ccc;
+-webkit-transition:width 1s, height 2s, background-color 2s, color 1s, transform 0.2s ease-in-out; 
+}
+input:hover { width:300px;height:30px;background-color:#fffdd0;color: black; border: 3px dashed #FF99CC}
+
+a
+{
+	font-family: Arial, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	text-decoration:none;
+	
+	display: block;
+	color:#fff;
+	padding: 8px 40px;
+	height:20px;width:40px;
+	border-radius: 3px;
+	box-shadow: 3px 3px 8px #888888;
+	border: 1px solid #7a7a7a;
+	background: -webkit-linear-gradient(top, #a9a9a9 0%, #929292 16px, #818181 17px, #989898 100%);
+	-webkit-transition: background 0.2s;
+}
+
+
+a:hover
+{	
+	text-shadow: black 0.5em 0.5em 0.6em;
+	color: #336600;
+}
+
+a:active
+{
+	background: -webkit-linear-gradient(top, #f00, #f00);
+}
+
+</style>
+</head>
+<body>
+<form>
+Imie: <input type="text" name="imie" required /><br><br>
+Nazwisko: <input type="text" name="nazwisko" required /><br><br>
+Adres: <input type="text" name="adres" required /><br><br>
+<a href="#">Zapisz</a>
+
+</form>
+</body>
+</html>
+
