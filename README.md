@@ -55,7 +55,7 @@
 * [Kurs języka Java](https://github.com/PiotrStoklosa/University/tree/main/semestr%20III/kurs-jezyka-java)
     * Wykład: Paweł Rzechonek
     * Pracownia: Piotr Witkowski
-* Kurs WWW
+* [Kurs WWW](https://github.com/PiotrStoklosa/University/tree/main/semestr%20V/kurs-www)
     * Wykład: Paweł Rajba
     * Pracownia: Paweł Rajba
 * [Systemy operacyjne](https://github.com/PiotrStoklosa/University/tree/main/semestr%20III/systemy-operacyjne)
