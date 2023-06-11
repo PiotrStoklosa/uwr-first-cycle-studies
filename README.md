@@ -85,16 +85,16 @@
 
 ## [Semestr V 2021/22](https://github.com/PiotrStoklosa/University/tree/main/semestr%20V)
 
-* Programowanie współbieżne
+* [Programowanie współbieżne](https://github.com/PiotrStoklosa/University/tree/main/semestr%20V/programowanie-wspolbiezne)
     * Wykład: Piotr Witkowski
     * Pracownia: Piotr Witkowski
 * [Scala in Practice](https://github.com/PiotrStoklosa/University/tree/main/semestr%20V/scala-in-practise)
     * Wykład: Michał Kowalczykiewicz
     * Pracownia: Michał Kowalczykiewicz
-* Wybrane elementy praktyki projektowania oprogramowania:
+* [Wybrane elementy praktyki projektowania oprogramowania](https://github.com/PiotrStoklosa/University/tree/main/semestr%20V/wybrane-elementy-praktyki-projektowania-oprogramowania)
     * Wykład: Wiktor Zychla
     * Pracownia: Wiktor Zychla
-* Komunikacja człowiek-komputer
+* [Komunikacja człowiek-komputer](https://github.com/PiotrStoklosa/University/tree/main/semestr%20V/komunikacja-czlowiek-komputer)
     * Wykład: Zdzisław Płoski
     * Ćwiczenia + pracownia: Zdzisław Płoski
 
