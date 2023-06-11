@@ -1,0 +1,14 @@
+console.log( (![]+[])[+[]]+(![]+[])[+!+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]] ); <- wypisze w konsoli 'fail'
+
+Podzielmy kod na 4 fragmenty:
+
+(![]+[])[+[]] <- obliczy się do 'f', ponieważ pusta tablica przy konwersji na typ boolean obliczy się do true, stąd ![] obliczy się do false, mamy sytuację false+[], z czego + konwertuje oba argumenty na typ String, więc dostaniemy "false"+"" co obliczy się do "false". +[] obliczy się do wartości 0, więc dostaniemy "false"[0] co obliczy się do 'f'
+
+(![]+[])[+!+[]] <- obliczy się do 'a', ponieważ podobnie jak wyżej (![]+[]) obliczy się do 'false', [+!+[]] obliczy się do wartości 1, ponieważ +[] obliczy się do 0 (jak wyżej), !+[] do wartości true, a [+!+[]] do 1. Czyli dostaniemy "false"[1] co daje 'a'
+
+([![]]+[][[]])[+!+[]+[+[]]] <- obliczy się do 'i', ponieważ podobnie jak wyżej (![]+[]) obliczy się do 'false', do któego dodamy wartość [][[]] czyli 'undefined'. Razem da nam to 'falseundefined'. Następnie +!+[] obliczy się do wartości 1 (jak wyżej), a [+[]] do wartości 0 (jak wyżej). Po dodaniu otrzymamy "10", więc mamy 'falseundefined'["10"] co oblicza się do 'i'
+
+(![]+[])[!+[]+!+[]] <- obliczy się do 'l', ponieważ podobnie jak wyżej (![]+[]) obliczy się do 'false', !+[] obliczy się do 1 (jak wyżej), więc !+[]+!+[] obliczy się do 2.
+                    Czyli dostaniemy "false"[2] co daje 'l'
+
+Sumując 'f' + 'a' + 'i' + 'l' = 'fail'

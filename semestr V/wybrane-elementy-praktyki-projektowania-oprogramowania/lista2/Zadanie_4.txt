@@ -1,0 +1,5 @@
+Operator instanceof zwraca wartość typu bool: true jeżeli podany obiekt jest instancją danego typu, false w przeciwnym wypadku,
+Przykładowo: console.log(new String("test") instanceof String); <- true
+
+Operator typeof zwraca typ danej instancji.
+Przykładowo: console.log(typeof 3) <- number

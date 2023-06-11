@@ -1,0 +1,8 @@
+{
+    "name": "zadanie_3",
+    "type": "module",
+    "main": "Zadanie_3.js",
+    "dependencies": {
+      "pg-promise": "^10.11.1"
+    }
+  }
