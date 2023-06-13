@@ -1,0 +1,25 @@
+       read  1
+       read  2
+to:    load  1
+       sub   2
+       add   =1
+       jgtz  dalej
+       load  2
+       store 3
+       load  1
+       store 2
+       load  3
+       store 1
+dalej: load  2
+       jgtz  next
+       write 1
+       halt  
+next:  load  1
+       div   2
+       mult  2
+       mult  =-1
+       add   1
+       store 1
+
+
+       jump  to

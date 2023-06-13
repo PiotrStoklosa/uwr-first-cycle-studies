@@ -1,0 +1,21 @@
+     read  3
+     load  3
+     sub   =1
+     store 3
+     read  1
+to:  load  3
+     jzero tak
+     sub   =1
+     store 3
+     load  1
+     read  2
+     sub   2
+     add   =1
+     jgtz  nie
+     load  2
+     store 1
+     jump  to
+nie: write =0
+     halt  
+tak: write =1
+     halt  

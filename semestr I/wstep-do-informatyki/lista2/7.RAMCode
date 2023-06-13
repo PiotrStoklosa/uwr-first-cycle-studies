@@ -1,0 +1,24 @@
+              read  1
+              load  =3
+              store 2
+to:           load  2
+              sub   =2
+              sub   1
+              jgtz  wypisywanie1
+              read  ^2
+              load  2
+              add   =1
+              store 2
+              jump  to
+wypisywanie1: load  2
+              sub   =1
+              store 2
+wypisywanie:  load  2
+              sub   =2
+              jzero zakoncz
+              write ^2
+              load  2
+              sub   =1
+              store 2
+              jump  wypisywanie
+zakoncz:      halt  

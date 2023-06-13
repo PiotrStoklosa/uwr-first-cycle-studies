@@ -1,0 +1,32 @@
+         read  1
+         load  1
+         sub   =1
+         jzero koniec1
+         sub   =1
+         jzero koniec2
+         load  =1
+         store 2
+to:      load  2
+         sub   =1
+         sub   1
+         jzero koniec
+         load  2
+         mult  1
+         store 2
+         load  1
+         store ^2
+         load  2
+         div   1
+         add   =1
+         store 2
+         jump  to
+koniec:  load  =0
+         store 1
+         store 2
+         halt  
+koniec2: load  1
+         store 2
+         store 4
+         load  =0
+         store 1
+koniec1: halt  
