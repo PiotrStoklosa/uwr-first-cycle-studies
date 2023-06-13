@@ -1,0 +1,28 @@
+Parę liczb naturalnych n i m nazywamy zaprzyjaźnioną, jeśli suma naturalnych dzielników liczby n mniejszych od n jest równa m oraz jeśli suma naturalnych dzielników liczby m mniejszych od m jest równa n. Na przykład, zaprzyjaźnione są liczby 220 = 1 + 2 + 4 + 71 + 142 (dzielniki 284) oraz 284 = 1 + 2 + 4 + 5 + 10 + 11 + 20 + 22 + 44 + 55 + 110 (dzielniki 220).
+Napisać program, który czyta ze standardowego wejścia liczbę s typu int i wyznacza parę liczb zaprzyjaźnionych n i m typu int większych niż s, gdzie n < m oraz n jest najmniejszą liczbą, która występuje w parze liczb zaprzyjaźnionych i jest większa niż s. Proszę zwrócić uwagę, że taka para może nie istnieć, ze względu na ograniczony zakres liczb w typie int. Stała INT_MAX zdefiniowana w pliku nagłówkowym limits.h określa maksymalną wartość dostępną w tym typie. Program powinien wypisać na standardowym wyjściu wartości liczb n i m oddzielone pojedynczą spacją i zakończone znakiem nowego wiersza.. Jeśli taka para nie istnieje, należy wypisać zamiast niej słowo BRAK pisane dużymi literami.
+
+Wskazówka: Jeśli liczba n dzieli się przez k, to dzieli się również przez n/k i jedna z tych liczb jest mniejsza bądź równa pierwiastkowi z n.
+
+Przykład danych 1
+
+153
+
+Wynik 1:
+
+220 284
+
+Przykład danych 2:
+
+5000
+
+Wynik 2:
+
+5020 5564
+
+Przykład danych 3:
+
+2147483647
+
+Wynik 3:
+
+BRAK

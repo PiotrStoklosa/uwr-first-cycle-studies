@@ -1,0 +1,11 @@
+typedef long long int Wymierna;
+Wymierna konstruuj(int licznik, int mianownik);
+int licznik(Wymierna w);
+int mianownik (Wymierna w);
+int nwd(int a, int b);
+Wymierna wczytaj();
+void wypisz();
+Wymierna dod(Wymierna w, Wymierna r);
+Wymierna ode(Wymierna w, Wymierna r);
+Wymierna ilocz(Wymierna w, Wymierna r);
+Wymierna iloraz(Wymierna w, Wymierna r);

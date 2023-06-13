@@ -1,0 +1,108 @@
+Tetris 2. Zadanie jest o tym, ile wypełnionych wierszy można maksymalnie ułożyć wrzucając podane bloki w określonej kolejności.
+
+Wejście:
+
+Na początku znajdują się trzy liczby naturalne m <= 10, n <= 10 i num_blocks <= 8. Liczba m to szerokość, a n to wysokość prostokątnej planszy.
+
+Następnie znajduje się opis kolejnych num_blocks bloków. Każdy opis składa się z wiersza zawierającego wymiary bloku 1 <= w <= 10, 1 <= h <= 10 (szerokość i wysokość), oraz z h wierszy zawierających w znaków każdy, gdzie '#' oznacza wypełnione pole, a '.' puste pole.
+
+Po tym wszystkim znajduje się liczba testów num_tests <= 8 oraz ich opisy. Każdy opis składa się z wiersza zawierającego num_blocks liczb całkowitych z przedziału 0..num_blocks-1. Definiują one kolejność (permutację) bloków w jakiej wrzucamy je na planszę. Numery odnoszą się do kolejności bloków podanych na wejściu, zaczynając od 0.
+
+Działanie:
+
+Każdy test definiuje w jakiej kolejności wrzucamy bloki. Każdy blok możemy wrzucić na co najwyżej m-w+1 sposobów, wybierając odpowiednie kolumny. Nie ma żadnego obracania bloków. Blok pojawia się na górze planszy, a następnie opada aż do pierwszej lokalizacji poniżej której jakieś wypełnione pole bloku nałożyłoby się z polem bloku już wcześniej usadowionego, bądź wyszłoby poza planszę. Wynikiem jest liczba wypełnionych wierszy na planszy po wrzuceniu ostatniego bloku (nie ma żadnego znikania wierszy w trakcie gry).
+
+    Można założyć, że wymiary bloku są minimalne, czyli na brzegach nie ma pustych wierszy ani kolumn. Przykładowo, opis bloku
+
+4 3
+....
+#.#.
+..#.
+
+jest nieprawidłowy i ten sam blok będzie opisany w następujący sposób:
+
+3 2
+#.#
+..#
+
+    Poza tym bloki mogą być całkiem dowolne; w szczególności wypełnione pola nie muszą być spójne, jak w przykładzie powyżej.
+    Może się zdarzyć, że wskutek wcześniejszych wyborów, bloku nie możemy umieścić, bo zawsze będzie się nakładać lub wystawać poza planszę. Wtedy wynikiem takich wyborów jest 0. Przykładowo, jeśli któryś z bloków, które musimy ustawić ma wymiary większe niż plansza, czy też nie da się zmieścić na planszy wszystkich bloków w teście, to wynikiem będzie zawsze 0.
+
+Kolejność bloków jest więc określona, ale bloki możemy wrzucać na różnych pozycjach i od tych wyborów może zależeć wynik.
+Interesuje nas największa możliwa do uzyskania liczba wypełnionych wierszy.
+
+Wyjście:
+
+Należy wypisać num_tests wyników odpowiadających kolejnym testom, oddzielonych spacjami.
+
+Program będzie kompilowany z optymalizacją -O3 i będzie miał 40 sekund na każdy test.
+
+Przykład 1:
+
+5 10 3
+2 2
+##
+##
+2 2
+##
+##
+2 3
+##
+#.
+#.
+2
+0 1 2
+2 0 1
+
+Wynik:
+
+2 0
+
+Plansza końcowa która daje maksymalny wynik w pierwszym teście:
+
+....
+##..
+####
+####
+
+ 
+
+Przykład 2:
+
+5 5 3
+3 2
+#.#
+###
+5 2
+##.##
+#.#.#
+1 1
+#
+2
+1 2 0
+0 1 2
+
+Wynik:
+
+1 2
+
+
+Przykład 3:
+
+5 5 2
+5 1
+#####
+1 5
+#
+#
+#
+#
+#
+1
+0 1
+
+Wynik:
+
+0
+
+Po wrzuceniu pierwszego bloku, nie da się już wrzucić drugiego.

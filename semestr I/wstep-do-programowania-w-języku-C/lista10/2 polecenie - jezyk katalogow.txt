@@ -1,0 +1,45 @@
+Rozważymy język służący do wykonywania operacji na uproszczonym drzewie katalogów (podobnym do tego sprzed tygodnia).
+
+Korzeniem drzewa katalogów jest katalog główny i jest on początkowym katalogiem roboczym. Podkatalogi danego katalogu numerowane są liczbami naturalnymi od 0 kolejno. Ciąg instrukcji zdefiniowany jest przez następującą gramatykę bezkontekstową w notacji BNF:
+
+<zmienna> ::= c | d | s
+<wyrażenie> ::= <zmienna> | <liczba>
+<komparator> ::= < | = | >
+<instrukcja> ::= print <wyrażenie>; | cd ..; | cd <wyrażenie>; | mkdir; | while(<wyrażenie> <komparator> <wyrażenie>) {<ciąg instrukcji>}
+<ciąg instrukcji> ::= | <instrukcja><ciąg instrukcji>
+
+W ciągu instrukcji mogą występować dodatkowe spacje i znaki końca linii.
+
+Instrukcja print wypisuje na ekran wartość podanego wyrażenia. Wartością liczby jest ona sama, wartością zmiennej c — liczba podkatalogów katalogu roboczego, zmiennej d — głębokość katalogu roboczego (0 dla katalogu głównego), zmiennej s — liczba utworzonych katalogów (nie wliczamy katalogu głównego). Wartości wyrażeń będą zawsze nieujemnymi liczbami mieszczącymi się w typie int.
+
+Instrukcja cd .. zmienia katalog roboczy na rodzica katalogu roboczego.
+
+Druga instrukcja cd zmienia katalog roboczy na podkatalog o numerze będącym wartością podanego wyrażenia.
+
+Instrukcja mkdir tworzy nowy podkatalog w katalogu roboczym i zostaje on podkatalogiem o numerze 0, a pozostałe podkatalogi zwiększają numery o 1.
+
+Instrukcja while powtarza podany ciąg instrukcji, kiedy warunek jest prawdziwy (jak pętla while).
+
+Na wejściu dany jest ciąg instrukcji o definiowanym działaniu, nie dłuższy niż dziesięć tysięcy znaków. Program ma wypisać wartości wypisywane przez instrukcję print. Wystarczy symulowanie programu krok po kroku.
+
+Przykładowe wejście:
+
+while(d < 8) {
+  print s;
+  while(c < d) {
+    mkdir;
+  }
+  mkdir;
+  cd 0;
+}
+
+Odpowiadające mu wyjście:
+
+0
+1
+3
+6
+10
+15
+21
+28

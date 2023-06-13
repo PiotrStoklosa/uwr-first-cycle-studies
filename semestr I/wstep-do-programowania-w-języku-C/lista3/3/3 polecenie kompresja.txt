@@ -1,0 +1,44 @@
+Różne kolejności pikseli i kompresja obrazu
+
+W prostym formacie graficznym PBM obraz binarny (czarno-biały) jest pamiętany jako plik tekstowy z dwu wierszowym nagłówkiem, po którym następuje ciąg wartości 0/1 pikseli w kolejności od górnego rogu wiersz po wierszu. Taki obraz można skompresować (wersja RLE, czyli Run Length Encoding) pamiętając ilości powtarzających się naprzemiennie zer i jedynek. Jeśli pierwszy piksel jest jedynką to po kompresji zaczynamy od 0 bo taka jest liczba zer na początku.
+
+Rozważamy tylko obrazki kwadratowe o boku parzystym N, o maksymalnym rozmiarze 1024x1024. Poza kolejnością pikseli wiersz po wierszu "Row", rozważamy kolejności "Snake" i "Diagonal".
+
+Stosując inne kolejności pikseli czasem możemy uzyskać lepszą kompresje RLE. Celem programu jest wypisanie trzech liczb będących długościami skompresowanego obrazka (ilością liczb opisujących ciągi zer i jedynek) przy pomocy tych trzech różnych kolejności pikseli.
+
+Na wejściu pierwszy wiersz opisuje nam format obrazu (P1,RR,RS lub RD), tak więc dla P1 jest to obraz w formacie PBM jak poniżej w 1 przykładzie, wtedy w  2 wierszu nagłówka mamy rozmiar obrazka  N x N (u nas szerokość jest równa wysokości). Możemy mieć także obraz skompresowany jak w przykładzie 2, gdzie w pierwszym wierszu mamy określony format i porządek pikseli tzn. RR (Row), RS (Snake) lub RD (Diagonal), a w drugim wierszu bok obrazka. W przypadku obu formatów dane dla pikseli są oddzielone jednym lub kilkoma białymi znakami (może to być np. jedna spacja, kilka spacji, spacja i znak nowego wiersza).
+
+UWAGA:  Obrazek w formacie PBM można uzyskać np. programem convert z pakietu ImageMagick poleceniem:
+                convert plik.jpg -resize 64x64\! -colors 2 -compress none  plik.pbm
+
+ 
+
+Przykład danych 1:
+
+P1
+4 4
+0 0 0 0
+0 0 0 0
+1 1 0 0
+1 1 0 0
+
+Wynik 1:
+
+5 4 5
+
+Przykład danych 2:
+
+RD
+4
+0 10 6
+
+Wynik 2:
+
+7 6 3
+
+Odpowiedni obrazek dla przykładu 2 (nie jest wyjściem):
+
+1 1 1 1
+1 1 1 0
+1 1 0 0
+1 0 0 0

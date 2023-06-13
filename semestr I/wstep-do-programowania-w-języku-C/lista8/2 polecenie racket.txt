@@ -1,0 +1,31 @@
+Zwyczajne wyrażenie w języku Racket jest liczbą, identyfikatorem lub kombinacją. Dla uproszczenia założymy, że liczba jest (niepustym) ciągiem cyfr, a identyfikator (niepustym) ciągiem, w którym mogą wystąpić małe i wielkie litery oraz cztery operatory arytmetyczne. Kombinacja jest zaś ciągiem zwyczajnych wyrażeń otoczonym parą nawiasów.
+
+Kombinacja oznacza wartość funkcji, która jest pierwszym elementem kombinacji, dla argumentów będących pozostałymi jej elementami. Przykładowo kombinacja (f x y) oznacza wartość, którą w języku C zapisalibyśmy jako f(x, y).
+
+Na wejściu dane jest jedno zwyczajne wyrażenie (w powyżej zdefiniowanym sensie) nie dłuższe niż dziesięć tysięcy znaków. Program ma wypisać odpowiadające mu wyrażenie w składni stosowanej w języku C. Zakładamy, że reprezentacja liczb i identyfikatorów się nie zmienia, a wartość funkcji dla danych argumentów zapisujemy jako nazwa funkcji, a następnie ciąg argumentów oddzielonych przecinkiem i spacją otoczony parą nawiasów.
+
+W testach mogą pojawić się nadmiarowe spacje, ale nie pojawiają się puste kombinacje.
+
+Przykład 1:
+
+1958
+
+Wynik:
+
+1958
+
+Przykład 2:
+
+(+ (* (cos a) (cos a)) (* (sin a) (sin a)))
+
+Wynik:
+
++(*(cos(a), cos(a)), *(sin(a), sin(a)))
+
+Przykład 3:
+
+(+ 1234567891011121314151617181920212223   (  * 1 1 1 1))
+
+Wynik:
+
++(1234567891011121314151617181920212223, *(1, 1, 1, 1))

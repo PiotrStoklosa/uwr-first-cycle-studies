@@ -1,0 +1,61 @@
+Symulator drzewa katalogów.
+
+Drzewo katalogów składa się z katalogów. Katalog zawiera co najwyżej 256 innych katalogów, w szczególności może nie zawierać żadnego katalogu, czyli być pusty. Każdy katalog ma nazwę, która jest niepustym ciągiem co najwyżej 256 liter (dużych i małych) oraz cyfr. Wyjątek stanowi katalog główny (czyli korzeń drzewa katalogów), którego nazwą jest pusty ciąg znaków. Katalog roboczy to katalog w którym aktualnie przeprowadzane są operacje na drzewie katalogów. Symulator rozpoczyna pracę z drzewem, które zawiera jedynie katalog główny i ten katalog jest początkowym katalogiem roboczym. Na takim drzewie wykonywane będą polecenia mkdir (ang. make directory), cd (ang. change directory) oraz pwd (ang. print working directory) o następującej składni i semantyce
+
+mkdir nazwa
+
+Jeśli bieżący katalog roboczy zawiera mniej niż 256 katalogów i nie zawiera jeszcze katalogu o podanej nazwie, to katalog taki zostaje utworzony.  W przeciwnym przypadku polecenie nie ma żadnego efektu.
+
+cd nazwa
+
+Jeśli w katalogu roboczym znajduje się katalog podanej nazwie, to staje się on nowym katalogiem roboczym. W przeciwnym przypadku polecenie nie ma żadnego efektu.
+
+cd ..
+
+Jeśli katalogiem roboczym nie jest katalog główny, to nowym katalogiem roboczym staje się katalog nadrzędny wobec bieżącego katalogu roboczego. W przeciwnym przypadku polecenie nie ma żadnego efektu.
+
+pwd
+
+Wypisuje na ekranie pełną ścieżkę od korzenia (katalogu głównego), do bieżącego katalogu roboczego w formacie 
+
+/nazwa_1/nazwa_2/.../nazwa_k/ 
+
+gdzie nazwa_k jest nazwą bieżącego katalogu roboczego, np.
+
+/usr/include/X11/bitmaps/new/bitops/current/mydir/
+
+ 
+ Zadanie
+
+Napisz program, który wczytuje ze standardowego wejścia ciąg poleceń zdefiniowanych powyżej, a na standardowym wyjściu wypisuje wynik ich działania, tzn. tekst wypisywany przez polecenia pwd. Każde polecenie z ciągu poleceń znajduje się w osobnym wierszu zakończonym znakiem nowego wiersza. Ciąg poleceń zakończony jest znakiem EOF. Każde polecenie pwd wypisuje ścieżkę zakończoną znakiem nowego wiersza.
+
+Argumenty nazwa dla poleceń cd i mkdir będą ciągami liter i cyfr o długości co najwyżej 256 znaków.   
+ 
+Przykład
+
+ dla ciągu poleceń
+
+pwd
+mkdir home
+cd home
+pwd
+mkdir pwit
+cd pwit
+pwd
+cd ..
+mkdir pwit
+pwd
+cd ..
+mkdir usr
+cd usr
+mkdir bin
+cd bin
+pwd
+
+ wynikiem działania programu jest
+
+/
+/home/
+/home/pwit/
+/home/
+/usr/bin/

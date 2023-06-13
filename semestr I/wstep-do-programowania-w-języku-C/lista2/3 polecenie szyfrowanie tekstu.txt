@@ -1,0 +1,138 @@
+Szyfrowanie Tekstu
+
+
+Zadanie polega na zaimplementowaniu pewnej metody szyfrowania.
+Załóżmy dla uproszczenia, że obsługujemy alfabet z ośmiu liter, od A do H.
+Litery alfabetu będą ponumerowane od 0 do 7.
+Z tak ponumerowanego alfabetu utworzymy 8 ciągów liter.
+Ciąg z indeksem zero to kolejne litery alfabetu począwszy od A, czyli A B C D E F G H.
+Ogólniej, ciąg z indeksem k to kolejne litery alfabetu zaczynając od tej z indeksem k,
+czyli dla k równego 4 będzie to E F G H A B C D.
+Poniżej przykład pełnej macierzy utworzonej z przesuniętych ciągów.
+idx = index
+off = offset (przesunięcie)
+
+    idx  0 0 0 0 0 0 0 0
+         0 1 2 3 4 5 6 7
+idx off  ---------------
+ 00  00  A B C D E F G H
+ 01  01  B C D E F G H A
+ 02  02  C D E F G H A B
+ 03  03  D E F G H A B C
+ 04  04  E F G H A B C D
+ 05  05  F G H A B C D E
+ 06  06  G H A B C D E F
+ 07  07  H A B C D E F G
+
+Zwróć uwagę, że indeksy liter w przypadku wierszy są jednocześnie przesunięciami.
+Dane wejściowe dla szyfrowania w takiej podstawowej wersji
+to tekst źródłowy oraz klucz również będący tekstem.
+
+klucz: BE
+tekst: CECHA
+       BEBEB (dopełnienie klucza)
+
+Jeśli klucz jest krótszy niż tekst do zaszyfrowania powielamy go cyklicznie,
+tak aby długość powielonego klucza była taka sama jak szyfrowanego tekstu.
+Jeśli zastąpimy litery ich indeksami otrzymamy słowa złożone z indeksów.
+
+klucz: 14
+tekst: 24270
+       14141 (dopełnienie klucza)
+
+Szyfrowanie tekstu.
+Indeksów z tekstu używamy do wyboru kolumny, a indeksów z klucza do wyboru wiersza.
+Używając pary indeksów (C, B)=(2, 1) do odczytu z macierzy otrzymujemy literę D.
+Używając pary indeksów (H, E)=(7, 4) również otrzymujemy literę D.
+
+Odszyfrowanie tekstu.
+Wykonujemy operacje odwrócenia klucza względem rozmiaru alfabetu,
+w naszym przykładzie znak odwróconego klucza o indeksie 'i' wyraża się formułą:
+keyrev[i] = (8 - key[i]) % 8,
+odszyfrowanie polega na wykonaniu operacji takich samych jak podczas szyfrowania,
+ale z użyciem odwróconego klucza.
+
+szyfrogram: DADDB    (szyfrogram to tekst w zaszyfrowanej postaci)
+
+Szyfr, który należy zaimplementować będzie dodatkowo posiadał
+permutowanie wierszy w macierzy, czyli indeksy 0..7 będą mapowane na przesuniącia 0..7.
+
+    idx  0 0 0 0 0 0 0 0
+         0 1 2 3 4 5 6 7
+idx off  ---------------
+ 00  01  B C D E F G H A
+ 01  02  C D E F G H A B
+ 02  05  F G H A B C D E
+ 03  04  E F G H A B C D
+ 04  06  G H A B C D E F
+ 05  03  D E F G H A B C
+ 06  07  H A B C D E F G
+ 07  00  A B C D E F G H
+
+Przy tak skonstruowanej macierzy znaków nasz przykład szyfrowania wygląda jak poniżej.
+Permutacja wierszy wpływa na kodowanie indeksów klucza.
+
+klucz: BE
+tekst: CECHA
+       BEBEB (dopełnienie klucza)
+
+klucz: 26 (permutacja (1->2) (4->6))
+tekst: 24270
+       26262 (dopełnienie klucza)
+
+szyfrogram: ECEFC
+
+Pełna metoda szyfrowania, którą należy zaimplementować
+musi działać na zestawie 64 znaków z zestawu ASCII,
+cyfr 0-9, wielkich liter A-Z oraz małych liter a-z, spacji i przecinka.
+Podane kategorie znaków nie tworzą ciągłego przedziału w kodzie ASCII,
+więc należy zmapować je do zakresu indeksów od 0 do 63.
+Należy przyjąć następujące indeksowanie:
+[1] cyfry pokrywają indeksy od 0 do 9
+[2] litery wielkie pokrywają indeksy od 10 do 35
+[2] litery małe pokrywą indeksy od 36 do 61
+[4] spacja to indeks 62
+[5] przecinek to indeks 63
+
+format danych wejściowych
+
+Dane wejściowe dla programu składają się z czterech wierszy (każdy zakończony znakiem '\n'):
+(1) operacja do wykonania (szyfrowanie lub odszyfrowanie, odpowiednio encrypt lub decrypt)
+(2) permutacja alfabetu (64 liczby z przedziału 0-63, oddzielone spacjami)
+(3) klucz tekstowy
+(4) tekst do zaszyfrowania/odszyfrowania
+
+W liniach (3) i (4), maksymalna obsługiwana długość tekstu to 256 znaków.
+
+Przykład danych 1: (transliteracja Не открывая замки, я буду вспоминать)
+
+encrypt
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63
+syberianka
+He OTKPbIBa9 3aMKN, 9 6yDy BCTTOMNHaTb
+
+Wynik 1:
+
+7aZ0I0zM0lQ5ZhP2u8jY,wha2eYyw1JKx,6G1M
+
+Przykład danych 2:
+
+decrypt
+1 0 3 2 5 4 7 6 9 8 11 10 13 12 15 14 17 16 19 18 21 20 23 22 25 24 27 26 29 28 31 30 33 32 35 34 37 36 39 38 41 40 43 42 45 44 47 46 49 48 51 50 53 52 55 54 57 56 59 58 61 60 63 62
+fr, en, ru
+xSymHkanaiTSlcVknZgucBchWRcqoWQoG d7y8oAGH
+
+Wynik 2:
+
+Je ne comprends pas, Neither do I, N 9 HeT
+
+Przykład danych 3:
+
+encrypt
+1 0 3 2 5 4 7 6 9 8 11 10 13 12 15 14 17 16 19 18 21 20 23 22 25 24 27 26 29 28 31 30 33 32 35 34 37 36 39 38 41 40 43 42 45 44 47 46 49 48 51 50 53 52 55 54 57 56 59 58 61 60 63 62
+fr, en, ru
+Je ne comprends pas... Neither do I! N 9 HeT!
+
+Wynik 3:
+
+UNSUPPORTED_ALPHABET

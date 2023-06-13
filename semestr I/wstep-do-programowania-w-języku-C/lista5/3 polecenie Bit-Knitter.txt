@@ -1,0 +1,104 @@
+Bit Knitter (czyli dziewiarka bitowa lub inaczej zaplatacz bitów)
+
+W tym zadaniu należy zaprogramować zaplatacz bitów sterowany symbolicznym wzorem.
+Rolą takiego zaplatacza jest przekształcanie kilku liczb/współrzędnych
+do jednej liczby, którą będziemy nazywać indeksem liniowym. Taka operacja daje
+mapowanie przestrzeni wielowymiarowej do jednowymiarowej, lub innymi słowy tworzy
+uporządkowanie krotek/wektorów liczb na jednowymiarowej osi.
+
+Na początek zwróćmy uwagę na to, że liczbę można reprezentować bitowo-numerycznie,
+np. dziesiętna liczba 5 to [0000 0101]_2 w postaci 8-bitowej numerycznej.
+Będziemy posługiwali się dodatkowo reprezentacją bitowo-symboliczną, w której
+mogą występować ustalone wartości (0 lub 1), ale oprócz nich występują symbole
+będące nazwami bitów. Przykładowo jeśli zdefiniujemy zmienną o nazwie x i wartości 5,
+to reprezentacja 8-bitowa symboliczna będzie wyglądała tak [x7 x6 x5 x4 x3 x2 x1 x0]_2,
+a jeśli pokażemy bity o wartości 0, to wtedy tak [0 0 0 0 0 x2 0 x0]_2. Liczby
+o nazwie x, które są większe lub równe 16 i mniejsze od 32, można wyrazić symboliczne
+jako [0 0 0 1 x3 x2 x1 x0]_2.
+
+Jednym z ważnych elementów programowania (szczegolnie w języku C), jest tworzenie
+wielowymiarowych tablic (2-wymiarowych, 3-wymiarowych, itd.). Naiwne rozwiązanie
+polega na czymś co można nazwać tablicą tablic, im więcej wymiarów tym więcej
+tablic w tablicach. Zamiast tego, można stworzyć jedną jednowymiarową
+tablicę, której rozmiar jest równy iloczynowi wszystkich wymiarów.
+Tak więc wielowymiarowy indeks zamieniamy na indeks jednowymiarowy (liniowy).
+Czy uporządkowanie elementów w takiej jednowymiarowej tablicy ma znaczenie?
+Odpowiedź brzmi - TAK - ma znaczenie, poniżej kilka przykładów:
+[1] run length encoding, siła/skuteczność kompresji RLE
+[2] out-of-core computing, optymalizacja operacji w dużej pamięci wolnej
+[3] high cache hit-rate, optymalizacja operacji w małej pamięci szybkiej
+[4] low cache eviction-rate, redukcja kolizji w mapowaniach haszujących
+
+Niech nasze wymiary nazywają się Nx oraz Ny, a współrzędne x oraz y,
+przy okazji, niech Lx oraz Ly oznaczają logarytmy dwójkowe z Nx oraz Ny.
+Nasza funkcja zaplotu będzie nazwana k(y, x), k jak knit.
+W reprezentacji bitowo-symbolicznej nasze indeksy składowe mają postać:
+
+    x = [x{Lx-1} x{Lx-2} ... x2 x1 x0]_2
+    y = [y{Ly-1} x{Ly-2} ... y2 y1 y0]_2
+
+Często można się spotkać z takimi mapowaniami (2D -> 1D):
+
+    k(y, x) = (y * Nx) + x  // skanowanie wierszowe (row-sweep)
+    k(y, x) = (x * Ny) + y  // skanowanie kolumnowe (col-sweep)
+
+W reprezentacji bitowo-symbolicznej te obliczenia mają taką postać:
+
+    k(y, x) = [y{Ly-1} y{Ly-2} ... y1 y0 x{Lx-1} ... x1 x0]_2
+    k(y, x) = [x{Lx-1} x{Ly-2} ... x1 x0 y{Ly-1} ... y1 y0]_2
+
+Możemy też zaplatać bity na inne sposoby oraz dokładać reguły modyfikujące.
+W naszym zaplataczu będziemy mieli tylko jedną regułę - warunkową negację.
+Przykładowo możemy ustalić taką regułę, że wartość bitu x0 musi być negowana
+jeśli bit y3 ma wartość 1, taką regułę będziemy notowali jako (cn x0 y3:1),
+cn to skrót od angielskiego "conditional negation".
+
+Założenia
+
+[A] Przyjmujemy, że wymiary naszej dwuwymiarowej kraty są potęgami dwójek.
+[B] Wymiary kraty nie muszą być takie same, tj. krata może nie być kwadratem.
+[C] Maksymalna liczba bitów dla jednego wymiaru wynosi 16.
+[D] Bity x noszą nazwy xF xE xD xC xB xA x9 x8 x7 x6 x5 x4 x3 x2 x1 x0.
+[E] Bity y noszą nazwy yF yE yD yC yB yA y9 y8 y7 y6 y5 y4 y3 y2 y1 y0.
+[F] Wymiary kraty mogą być odgadnięte z czytanej sygnatury zaplotu.
+[G] W pierwszym wierszu jest słowo encode lub decode, po którym jest znak '\n'.
+[H] W drugim wierszu jest sygnatura, symbole są oddzielona spacjami, kończy znak '\n'.
+[I] W trzecim wierszu jest jedna liczba (dla decode) lub para liczb (dla encode).
+[J] Umownie, y indeksuje wiersze, x indeksuje kolumny.
+[K] Każdy bit może być negowany co najwyżej jedną regułą.
+[L] Jeden bit może negować wiele bitów poprzez reguły negowania.
+
+Kodowanie
+
+Kodowanie polega na zapleceniu bitów dwóch indeksów zgodnie ze wzorem symbolicznym,
+a następnie wypisaniu na standardowym wyjściu liniowego indeksu w postaci dziesiętnej.
+W poniższym przykładzie bit y3 ma wartość 0 dla liczby równej 3, dlatego reguła
+warunkowego negowania nie ma wpływu na wynik. Jednak dla y równego 8 bit y3 miałby
+wartość 1 i należałoby zanegować wartość bitu x0 w finalnym liniowym indeksie.
+
+wejście:
+encode
+[y1 y0 x1 x0 y3 y2]_bin (cn x0 y3:1)
+(y,x)=(3,1)
+
+wyjście:
+52
+
+Dekodowanie
+
+Dekodowanie polega na rozpleceniu bitów zawartych w indeksie liniowym,
+tak aby uzyskać dwa składowe indeksy, wypisując je na standardowym wyjściu
+w reprezentacji dziesiętnej. Dekodowanie jest trochę trudniejsze
+niż kodowanie dlatego, że reguły negowania mogą być od siebie zależne,
+przykładowo możemy mieć reguły (cn x0 y1:0) (cn y1 x1:1) (cn x1 y2:1),
+wtedy aby rozstrzygnąć działanie reguły (cn x0 y1:0) trzeba prześledzić
+łańcuch wszystkich zależnych reguł i odgadąć oryginalną wartość bitu,
+którego wartość w indeksie liniowym mogła być zanegowana.
+
+wejście:
+decode
+[y1 y0 x1 x0 y3 y2]_bin (cn x0 y3:0)
+52
+
+wyjście:
+(y,x)=(3,0)

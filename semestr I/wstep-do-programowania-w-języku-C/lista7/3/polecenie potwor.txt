@@ -1,0 +1,47 @@
+Potwór 2. Z legowiska wyszedł potwór. W kilku miejscach żerował, o czym świadczą zostawione tam przez niego ślady. O zachowaniu potwora wiadomo tyle, że po zostawieniu śladów, potwór unika takiego miejsca i nigdy już do niego nie wraca. Napisz wykrywacz lokalizacji potwora.
+
+Na wejściu dane są dwie liczby naturalne 1 <= m <= 100 (szerokość) i 1 <= n <= 100 (wysokość), określające wymiary mapy terenu.
+Potem w kolejnych n wierszach po m znaków opisane są lokalizacje w następujący sposób:
+'.' oznacza obszar pusty, po którym potwór może się poruszać; '#' oznacza teren niedostępny; 'S' oznacza miejsce, w którym potwór zostawił ślady; 'L' oznacza miejsce w którym znajduje się jedno z możliwych legowisk. Wiadomo, że zostawionych śladów jest między 0 a 12.
+
+Potwór wyszedł z jednego z legowisk na mapie. Poruszając się w granicach mapy w kierunkach góra, dół, lewo, prawo, po obszarach innych niż niedostępne, odwiedził wszystkie miejsca ze śladami. Przez każdy obszar ze śladami przechodził dokładnie raz. Program powinien wypisać mapę, zaznaczając dokładnie wszystkie potencjalnie możliwe miejsca pobytu potwora. Wypisany opis powinien składać się ze znaków '.' (obszary dostępne), '#' (obszar niedostępny), oraz 'X', który oznacza możliwą lokalizację potwora.
+
+Limit pamięciowy w tym zadaniu wynosi 256 MB.
+
+Przykład 1:
+
+6 5
+#.....
+#.#S#.
+#..L#.
+###.#.
+S.S...
+
+Wynik:
+
+#.....
+#.#.#.
+#...#.
+###.#.
+XX....
+
+Przykład 2:
+
+8 7
+#..S....
+S..S...L
+####.#.#
+S......#
+####S###
+S.......
+####.###
+
+Wynik:
+
+#.......
+........
+####.#.#
+.......#
+####.###
+XXXXXXXX
+####X###
