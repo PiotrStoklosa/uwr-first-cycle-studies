@@ -80,8 +80,6 @@
 * Projektowanie obiektowe oprogramowania
     * Wykład: Wiktor Zychla
     * Pracownia: Marcin Młotkowski
-* O ekonomii i gospodarce inaczej (w)
-    * Wykład: Witold Kwaśnicki
 
 ## [Semestr V 2021/22](https://github.com/PiotrStoklosa/University/tree/main/semestr%20V)
 
