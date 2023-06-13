@@ -1,0 +1,27 @@
+Rada: Używaj gita. Rób commit co każdy punkt/podpunkt.
+
+1. Uruchom example1 i użyj valgrinda, aby sprawdzić wycieki pamięci
+    > mkdir build
+    > cd build
+    > cmake ..
+    > make
+    > ./example1
+    > valgrind ./example1
+   Popraw kod tak, aby nie było wycieku pamięci, skompiluj i ponownie sprawdź program valgrindem
+
+2. Uruchom example2 i sprawdź czy są w nim wycieki pamięci. Popraw program.
+
+3. Uruchom example3 i sprawdź czy są w nim wycieki pamięci
+    a) napisz własną klasę wyjątków dziedziczącą po logic_error i użyj jej w kodzie zamiast logic_error
+    b) popraw wyciek pamięci w programie
+
+4. Uruchom example4 i sprawdź czy są w nim wycieki pamięci. Popraw program.
+
+5. Uruchom example5 i sprawdź czy są w nim wycieki pamięci.
+    a) zmień kod w pliku example5.cpp tak, aby używał unique_ptr
+    b) użyj make_unique tam, gdzie to możliwe
+    c) sprawdź ponownie program valgrindem
+
+6. Uruchom example6
+    a) stwórz ciało funkcji makeFile oraz addToFile
+    b) wykorzystaj std::FILE i funkcje fopen, fclose, fprintf

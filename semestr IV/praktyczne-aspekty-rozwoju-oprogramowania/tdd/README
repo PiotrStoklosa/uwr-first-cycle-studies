@@ -1,0 +1,26 @@
+1. CMAKE generation
+
+    1.1 Crate folder for build files and enter there:
+
+    mkdir build
+    cd build
+
+    1.2 Generate makefiles
+
+    cmake ../
+
+2. BUILD soluton
+    
+    In build folder call:
+
+    make
+
+3. Recompile and execute test
+
+    make run
+
+Classes adivce:
+
+    Add your implementation of bowling game in "BowlingGame.h"
+
+    Add your test cases to "BowlingTDDProject.cpp"
