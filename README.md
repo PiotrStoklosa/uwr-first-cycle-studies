@@ -55,7 +55,7 @@
 * [Kurs języka Java](https://github.com/PiotrStoklosa/University/tree/main/semestr%20III/kurs-jezyka-java)
     * Wykład: Paweł Rzechonek
     * Pracownia: Piotr Witkowski
-* Kurs WWW
+* [Kurs WWW](https://github.com/PiotrStoklosa/University/tree/main/semestr%20V/kurs-www)
     * Wykład: Paweł Rajba
     * Pracownia: Paweł Rajba
 * [Systemy operacyjne](https://github.com/PiotrStoklosa/University/tree/main/semestr%20III/systemy-operacyjne)
@@ -80,8 +80,6 @@
 * Projektowanie obiektowe oprogramowania
     * Wykład: Wiktor Zychla
     * Pracownia: Marcin Młotkowski
-* O ekonomii i gospodarce inaczej (w)
-    * Wykład: Witold Kwaśnicki
 
 ## [Semestr V 2021/22](https://github.com/PiotrStoklosa/University/tree/main/semestr%20V)
 
