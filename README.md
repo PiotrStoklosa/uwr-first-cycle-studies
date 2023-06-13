@@ -64,7 +64,7 @@
 
 ## [Semestr IV 2020/21](https://github.com/PiotrStoklosa/University/tree/main/semestr%20IV)
 
-* Algorytmy i struktury danych (L)
+* [Algorytmy i struktury danych (L)](https://github.com/PiotrStoklosa/University/tree/main/semestr%20IV/algorytmy-i-struktury-danych)
     * Wykład: Krzysztof Loryś
     * Ćwiczenia: Łukasz Jeż
     * Pracownia: Marcin Bieńkowski
@@ -72,12 +72,12 @@
 * [Bazy danych](https://github.com/PiotrStoklosa/University/tree/main/semestr%20IV/bazy-danych)
     * Wykład: Piotr Wieczorek
     * Ćwiczenia: Piotr Wieczorek
-* Kurs: Praktyczne aspekty rozwoju oprogramowania
+* [Kurs: Praktyczne aspekty rozwoju oprogramowania](https://github.com/PiotrStoklosa/University/tree/main/semestr%20IV/praktyczne-aspekty-rozwoju-oprogramowania)
     * Wykład: pracownicy firmy Nokia
     * Pracownia: pracownicy firmy Nokia
-* Ochrona własności intelektualnej
+* [Ochrona własności intelektualnej](https://github.com/PiotrStoklosa/University/tree/main/semestr%20IV/ochrona-wlasnosci-intelektualnej)
     * Ćwiczenia: Adam Morawiec, Paweł Laskoś-Grabowski, Jakub Michaliszyn
-* Projektowanie obiektowe oprogramowania
+* [Projektowanie obiektowe oprogramowania](https://github.com/PiotrStoklosa/University/tree/main/semestr%20IV/projektowanie-obiektowe-oprogramowania)
     * Wykład: Wiktor Zychla
     * Pracownia: Marcin Młotkowski
 
