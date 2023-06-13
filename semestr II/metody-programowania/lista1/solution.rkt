@@ -1,0 +1,15 @@
+#lang racket
+(define (cube-root x)
+  (define (avarage x y) (/ (+ x y)3))
+  (define (good-enough? guess) (< (abs (- (* guess guess guess) x)) 0.0001))
+  (define (improve guess) (avarage (* 2 guess) (/ x (* guess guess))))
+  (define (sqrt-iter guess)
+    (if (good-enough? guess) guess (sqrt-iter (improve guess))))
+  (sqrt-iter 1.0))
+(provide cube-root)
+(cube-root 8)
+(cube-root 27)
+(cube-root -1000)
+(cube-root 46)
+(cube-root 98)
+;korzystalem z materialow z podrecznika
