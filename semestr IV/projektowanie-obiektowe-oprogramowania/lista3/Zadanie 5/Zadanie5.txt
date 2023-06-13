@@ -1,0 +1,3 @@
+W java.util znajduje się interfejs Iterator<E>. Zmusza on do zaimplementowania 3 metod: remove(), hasNext(), next(). W wielu przypadkach stosowanie remove() jest niepotrzebne. Przykładowo chcemy jedynie iterować się po naszej kolekcji nie chcąc usuwać żadnego z jej elementów, ale mimo wszystko jesteśmy zmuszeni do zaimplementowania tej metody. 
+
+Można chociażby usunąć metodę remove() z tego interejsu- usuwanie elementu często jest małointeresujące kiedy chcemy jedynie jak sama nazwa interfejsu wskazuje, iterować się po kolekcji. 

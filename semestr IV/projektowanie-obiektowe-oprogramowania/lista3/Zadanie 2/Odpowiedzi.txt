@@ -1,0 +1,13 @@
+Podany kod nie spełnia zasady RSP. Podana klasa ReportPrinter ma trzy odpowiedzialności, a według tej zasady powinna mieć dokładnie jedną.
+
+Ile klas docelowo powstanie z takiej jednej klasy?
+
+Powstaną trzy klasy.
+
+Dlaczego akurat tyle? 
+
+Mamy trzy różne zadania, które rozdzielamy na trzy różne klasy.
+
+Czy refaktoryzacja klasy naruszającej SRP oznacza automatycznie, że każda metoda powinna trafić do osobnej klasy?
+
+Czasami tak będzie, ale nie zawsze. Przykładowo jak mamy klasę komputer, to ona może zarówno posiadać metodę do włączenia jak i wyłączenia, ponieważ obie metody są powiązane z jedną odpowiedzialnością.

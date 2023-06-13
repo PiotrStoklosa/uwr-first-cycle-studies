@@ -1,0 +1,5 @@
+SRP czyli zasada pojedynczej odpowiedzialności polega na tym, że każda klasa odpowiada za jedną część logiki programu (czyli istnieje tylko jeden powód do modyfikacji). Klasa taka powinna być nieduża, skupiona na wykonywaniu odpowiedniego jej jednego zadania.
+
+ISP czyli zasada separacji interfejsów natomiast mówi o tym, że interfejs nie powinien zawierać nadmiaru metod, czyli klient nie powinien być zmuszony do implementacji metod niepotrzebnych. Poprawne interfejsy według tej zasady są minimalistyczne i mają zadanie skupiać się na jednej konkretnej czynności.
+
+Idea SRP i ISP jest podobna, jednak SRP skupia się na odpowiednim projektowaniu aplikacji w sposób taki, aby klasy skupione były na konketnym zadaniu, a ISP polega bardziej na samym kliencie, a konkretniej, aby nie narzucać implementacji zbyt wielu odbiegających od siebie celem metod.

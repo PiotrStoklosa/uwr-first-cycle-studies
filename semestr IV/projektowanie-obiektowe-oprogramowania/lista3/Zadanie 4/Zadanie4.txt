@@ -1,0 +1,3 @@
+Taka hierarchia nie spełnia zasady LSP. Według tej zasady klasa, która dziedziczy jakąś klasę powinna ją rozszerzać. W podanym kodzie klasa square nie rozszerza w żadnym stopniu klasy rectangle a nawet ogranicza pod względem przypisywania jej długości boków. W podanym kodzie klient dostanie informację, której się nie spodziewa, a mianowicie, że stworzony prostakąt o wymiarach 4 na 5 nie ma pola równego 4*5.
+
+Przykładowym rozwiązaniem jest stworzenie interfejsu, który narzuca implementację metody do policzenia pola. Taki interejs będzie implementowany przez klasę square i rectangle.

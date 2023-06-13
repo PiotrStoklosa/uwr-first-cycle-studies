@@ -1,0 +1,3 @@
+Czy na podstawie kodu można narysować jednoznaczny i precyzyjny diagram?
+
+Tak, ponieważ mając napisany kod, możemy dokładnie go odwzorować na diagramie. Możemy również zdecydować ile informacji chcemy w takim diagramie zawrzeć.
