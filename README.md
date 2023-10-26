@@ -126,7 +126,7 @@
 
 * Computer-Aided Design
    * Lecture: Ewa Grabska
-   * Class: 
+   * Class: Iwona Grabska-Gradzińska
 * Diffuse and Parallel Programming
    * Lecture: Piotr Oramus
    * Class: Piotr Oramus
@@ -134,9 +134,9 @@
     * Laboratory class: Karol Przystalski
  * Statistical Methods
    * Lecture: Kacper Topolnicki
-   * Class:
+   * Class:	Szymon Parzych
 * Project Management
    * Lecture: Marcin Gomoła
    * Class: Marcin Gomoła
 * Specialisation Seminar I
-   * Seminar:
+   * Seminar: Anna Sochocka
